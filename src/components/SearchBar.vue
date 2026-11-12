@@ -3,8 +3,6 @@ import { ref } from 'vue'
 
 const emit = defineEmits(['search'])
 const search = () => {
-  console.log('==SEARCH BAR COMPONENT DEBUG: ==')
-  console.log('INPUT.VALUE.TRIM(): ' + inputValue.value.trim())
   emit('search', inputValue.value.trim())
 }
 const inputValue = ref('')

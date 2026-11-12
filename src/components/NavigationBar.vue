@@ -23,6 +23,6 @@ h1 {
 }
 
 a {
-  color: white;
+  color: #58cf54;
 }
 </style>

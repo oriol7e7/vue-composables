@@ -15,8 +15,6 @@ const { data, error, loading, fetchData } = useFetch(endpoint)
 
 const onSearch = (text) => {
   search.value = text
-  console.log('==HOMEVIEW DEBUG==')
-  console.log('TEXT DETECTED FROM EMIT: ' + text)
   fetchData()
 }
 </script>

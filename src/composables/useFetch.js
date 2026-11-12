@@ -7,9 +7,6 @@ export function useFetch(endpoint) {
   const data = ref(null)
   const error = ref(null)
   const loading = ref(false)
-  console.log('==COMPOSABLE DEBUG==')
-  console.log('ENDPOINT: ' + endpoint)
-  console.log('ENDPOINT.VALUE ' + endpoint.value)
 
   /**
    * Fetches the endpoint of the parameter in the composable handling auxiliar reactive variables
