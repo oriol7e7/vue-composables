@@ -8,6 +8,11 @@ const props = defineProps({
   <div class="card">
     <img :src="props.meal.strMealThumb" alt="" />
     <strong>{{ props.meal.strMeal }}</strong>
+    <!--
+    Show category only if api responds with it
+    In searchs only, not in the initial load
+    -->
+    <p v-if="props.meal.strCategory" class="category">{{ props.meal.strCategory }}</p>
     <RouterLink :to="{ name: 'Meal', params: { id: props.meal.idMeal } }">Veure detall</RouterLink>
   </div>
 </template>
@@ -35,6 +40,9 @@ img {
 strong {
   font-weight: 600;
   text-align: center;
+}
+p {
+  color: white;
 }
 a {
   color: #58cf54;
