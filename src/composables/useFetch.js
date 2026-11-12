@@ -1,8 +1,15 @@
-import { ref, watchEffect, toValue } from 'vue'
+import { ref, onMounted } from 'vue'
+
+/**
+ * RECEIVES A REF OR A COMPUTED VALUE AND EXECUTES endpoint.value
+ */
 export function useFetch(endpoint) {
   const data = ref(null)
   const error = ref(null)
   const loading = ref(false)
+  console.log('==COMPOSABLE DEBUG==')
+  console.log('ENDPOINT: ' + endpoint)
+  console.log('ENDPOINT.VALUE ' + endpoint.value)
 
   /**
    * Fetches the endpoint of the parameter in the composable handling auxiliar reactive variables
@@ -11,7 +18,7 @@ export function useFetch(endpoint) {
     loading.value = true
     error.value = null
     try {
-      const res = await fetch(endpoint)
+      const res = await fetch(endpoint.value)
       if (!res.ok) {
         error.value = true
         return
